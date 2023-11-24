@@ -44,8 +44,8 @@ ad_dict = {
 for exp in range(100):
     print(f"Simple exp {exp}")
     logs = []
-    n_iterations = 2000
     for func_name, func in func_dict.items():
+        n_iterations = 2000 if func_name != "Beale" else 4000
         # print(f"Running function {func_name}")
         for ad_name, ad_func in ad_dict.items():
             # print(f"\tRunning AD {ad_name}")
@@ -102,8 +102,8 @@ def adam_update(grad, v, s, iteration, beta1=0.9, beta2=0.999, epsilon=1e-8):
 for exp in range(100):
     print(f"Adam exp {exp}")
     adam_logs = []
-    n_iterations = 2000
     for func_name, func in func_dict.items():
+        n_iterations = 2000 if func_name != "Beale" else 4000
         # print(f"Running function {func_name}")
         for ad_name, ad_func in ad_dict.items():
             # print(f"\tRunning AD {ad_name}")
