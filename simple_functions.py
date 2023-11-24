@@ -42,12 +42,13 @@ ad_dict = {
 }
 
 for exp in range(100):
+    print(f"Simple exp {exp}")
     logs = []
     n_iterations = 2000
     for func_name, func in func_dict.items():
-        print(f"Running function {func_name}")
+        # print(f"Running function {func_name}")
         for ad_name, ad_func in ad_dict.items():
-            print(f"\tRunning AD {ad_name}")
+            # print(f"\tRunning AD {ad_name}")
             lr = 1e-3
 
             params = np.array([0.5, 0.5])
@@ -79,7 +80,7 @@ for exp in range(100):
                 log["x"].append(params[0])
                 log["y"].append(params[1])
 
-            print(f"\tElapsed time: {current_time}")
+            # print(f"\tElapsed time: {current_time}")
             logs.append(pd.DataFrame(log))
 
     logs = pd.concat(logs, ignore_index=True)
@@ -99,12 +100,13 @@ def adam_update(grad, v, s, iteration, beta1=0.9, beta2=0.999, epsilon=1e-8):
 
 
 for exps in range(100):
+    print(f"Adam exp {exp}")
     adam_logs = []
     n_iterations = 2000
     for func_name, func in func_dict.items():
-        print(f"Running function {func_name}")
+        # print(f"Running function {func_name}")
         for ad_name, ad_func in ad_dict.items():
-            print(f"\tRunning AD {ad_name}")
+            # print(f"\tRunning AD {ad_name}")
             lr = 1e-3
 
             params = np.array([0.5, 0.5])
@@ -141,7 +143,7 @@ for exps in range(100):
                 log["x"].append(params[0])
                 log["y"].append(params[1])
 
-            print(f"\tElapsed time: {current_time}")
+            # print(f"\tElapsed time: {current_time}")
             adam_logs.append(pd.DataFrame(log))
 
     adam_logs = pd.concat(adam_logs, ignore_index=True)
