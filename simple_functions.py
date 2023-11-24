@@ -99,7 +99,7 @@ def adam_update(grad, v, s, iteration, beta1=0.9, beta2=0.999, epsilon=1e-8):
     return adapted_grad, new_v, new_s
 
 
-for exps in range(100):
+for exp in range(100):
     print(f"Adam exp {exp}")
     adam_logs = []
     n_iterations = 2000
