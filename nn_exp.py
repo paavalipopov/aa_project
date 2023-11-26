@@ -214,12 +214,12 @@ optimization = [
 
 
 layer_sizes = [784, 10]
-num_epochs = 100
+num_epochs = 20
 batch_size = 100
 
 logs = []
 epoch_logs = []
-for exp in range(50):
+for exp in range(100):
     log = {
         "Iteration": [],
         "Time": [],
@@ -325,7 +325,6 @@ for exp in range(50):
     logs.append(pd.DataFrame(log))
     epoch_logs.append(pd.DataFrame(epoch_log))
 
-for i, log in enumerate(logs):
-    log.to_csv(f"./nn_results/log_{i}.csv")
-for i, log in enumerate(epoch_logs):
-    log.to_csv(f"./nn_results/exp_log_{i}.csv")
+    pd.DataFrame(log).to_csv(f"./nn_results/log_{exp}.csv")
+    pd.DataFrame(epoch_log).to_csv(f"./nn_results/exp_log_{exp}.csv")
+
