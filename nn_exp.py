@@ -219,7 +219,7 @@ batch_size = 100
 
 logs = []
 epoch_logs = []
-for exp in range(5):
+for exp in range(50):
     log = {
         "Iteration": [],
         "Time": [],
